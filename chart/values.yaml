@@ -1,0 +1,122 @@
+# Default values for heytaco-anywhere.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: heytacoanywhere/heytaco-anywhere:0.1.0
+  tag: stable
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podSecurityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# The keys within the "env" map are mounted as environment variables. 
+# See the full reference of Heytaco Anywher environment variables here:
+#
+env:
+  # REQUIRED: Set the user-visible hostname.
+  #
+  HEYTACO_ANYWHERE_SERVER_HOST: ""
+  # REQUIRED: The protocol to pair with the value in DRONE_SERVER_HOST (http or https).
+  #
+  HEYTACO_ANYWHERE_SERVER_PROTO: https
+
+  # DB-specific vairables.
+  # If you are using SQLite as your DB for Heytaco Anywhere, it is recommended to enable persistence.
+  #
+  HEYTACO_ANYWHERE_STORE_DRIVER: sqlite3
+  HEYTACO_ANYWHERE_STORE_SOURCE: file:/var/data/sqlite3.db?cache=shared&_fk=1
+
+  # Set the secret that the server validates the signature.
+  #
+  # HEYTACO_ANYWHERE_WEBHOOK_SECRET:
+
+  # Heytaco Directives (Select Slack or Microsoft Teams)
+
+  # Slack-specific variables.
+  #
+  HEYTACO_ANYWHERE_SLACK_CHANNEL:
+  HEYTACO_ANYWHERE_SLACK_CLIENT_ID:
+  HEYTACO_ANYWHERE_SLACK_CLIENT_SECRET:
+
+  # TODO: support Teams
+
+  # Service Directives (Multi service enabled)
+
+  # Github-specific variables.
+  #
+  # HEYTACO_ANYWHERE_GITHUB_CLIENT_ID: 
+  # HEYTACO_ANYWHERE_GITHUB_CLIENT_SECRET:
+
+  # Atlassian-specific variables.
+  #
+  # HEYTACO_ANYWHERE_ATLASSIAN_CLIENT_ID:
+  # HEYTACO_ANYWHERE_ATLASSIAN_CLIENT_SECRET
+
+# If you'd like to provide your own Kubernetes Secret object instead of passing your values
+# in un-encrypted, pass in the name of a created + populated Secret in the same Namespace
+# as the server.
+extraSecretNamesForEnvFrom: []
+# - heytaco-anywhere-secret
+
+persistentVolume:
+  # If you are using SQLite as your DB for Heytaco Anywhere, it is recommended to enable persistence. 
+  enabled: true
+
+  accessModes:
+    - ReadWriteOnce
+
+  annotations: {}
+
+  existingClaim: ""
+
+  mountPath: /var/data
+
+  size: 8Gi
+
+  storageClass: ""
+
+  # If empty (the default) or set to null, no volumeBindingMode spec is
+  # set, choosing the default mode.
+  #
+  volumeMode: ""
+
+  subPath: ""
+
+# If persistentVolume.enabled is set to false, it will mount an emptyDir instead of
+# a PVC for any state that it needs to persist.
+#
+emptyDir:
+  # Total space to request for the emptyDir. An empty value here means no limit.
+  sizeLimit: ""
