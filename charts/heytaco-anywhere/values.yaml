@@ -48,7 +48,7 @@ env:
   # REQUIRED: Set the user-visible hostname.
   #
   HEYTACO_ANYWHERE_SERVER_HOST: ""
-  # REQUIRED: The protocol to pair with the value in DRONE_SERVER_HOST (http or https).
+  # REQUIRED: The protocol to pair with the value in HEYTACO_ANYWHERE_SERVER_HOST (http or https).
   #
   HEYTACO_ANYWHERE_SERVER_PROTO: https
 
