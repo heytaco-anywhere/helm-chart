@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: heytacoanywhere/heytaco-anywhere:0.1.0
-  tag: stable
+  repository: heytacoanywhere/heytaco-anywhere
+  tag: "0.1.0-beta"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
