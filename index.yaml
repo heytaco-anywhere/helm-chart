@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  heytaco-anywhere:
+  - apiVersion: v1
+    appVersion: 0.1.0-beta1
+    created: "2021-04-04T02:33:13.132487172Z"
+    description: A Helm chart for Kubernetes
+    digest: 7bc0cd107dbd99dc7158b567216ec55f051c7d38c28d894ae8a59b6967e60900
+    name: heytaco-anywhere
+    urls:
+    - https://heytaco-anywhere.github.io/helm-chart/heytaco-anywhere-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-04-04T02:33:13.131596834Z"
