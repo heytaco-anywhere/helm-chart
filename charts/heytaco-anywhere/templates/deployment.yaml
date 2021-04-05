@@ -43,6 +43,10 @@ spec:
             - secretRef:
                 name: {{ . }}
             {{- end }}
+          volumeMounts:
+            - name: storage-volume
+              mountPath: {{ .Values.persistentVolume.mountPath }}
+              subPath: "{{ .Values.persistentVolume.subPath }}"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
