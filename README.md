@@ -10,9 +10,9 @@ Read and follow the Helm installation guide.
 
 In order to be able to use the charts in this repository, add the name and URL to your Helm client:
 
-```
-helm repo add heytaco-anywhere https://heytaco-anywhere.chat/helm-chart/
-helm repo update
+```console
+$ helm repo add heytaco-anywhere https://heytaco-anywhere.chat/helm-chart/
+$ helm repo update
 ```
 
 ## Installing Heytaco Anywhere
@@ -48,7 +48,7 @@ $ helm upgrade heytaco-anywhere heytaco-anywhere/heytaco-anywhere --namespace he
 To uninstall/delete the `heytaco-anywhere` deployment in the `heytaco-anywhere` namespace:
 
 ```console
-helm delete heytaco-anywhere --namespace heytaco-anywhere
+$ helm delete heytaco-anywhere --namespace heytaco-anywhere
 ```
 
 ## Documentation
