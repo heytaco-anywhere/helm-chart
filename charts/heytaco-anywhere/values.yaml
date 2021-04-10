@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: heytacoanywhere/heytaco-anywhere
-  tag: "0.1.0-beta2"
+  tag: "0.1.1"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -43,6 +43,7 @@ affinity: {}
 
 # The keys within the "env" map are mounted as environment variables. 
 # See the full reference of Heytaco Anywher environment variables here:
+# https://heytaco-anywhere.chat/docs/reference/
 #
 env:
   # REQUIRED: Set the user-visible hostname.
@@ -71,8 +72,8 @@ env:
   # DB-specific vairables.
   # If you are using SQLite as your DB for Heytaco Anywhere, it is recommended to enable persistence.
   #
-  HEYTACO_ANYWHERE_STORE_DRIVER: sqlite3
-  HEYTACO_ANYWHERE_STORE_SOURCE: file:/var/data/sqlite3.db?cache=shared&_fk=1
+  # HEYTACO_ANYWHERE_STORE_DRIVER: 
+  # HEYTACO_ANYWHERE_STORE_SOURCE: 
 
   # TODO: support Teams
 
@@ -105,7 +106,7 @@ persistentVolume:
 
   existingClaim: ""
 
-  mountPath: /var/data
+  mountPath: /data
 
   size: 8Gi
 
