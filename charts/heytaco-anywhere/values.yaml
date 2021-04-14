@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: heytacoanywhere/heytaco-anywhere
-  tag: "0.1.1"
+  tag: "0.1.5"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -84,10 +84,10 @@ env:
   # HEYTACO_ANYWHERE_GITHUB_CLIENT_ID: 
   # HEYTACO_ANYWHERE_GITHUB_CLIENT_SECRET:
 
-  # Atlassian-specific variables.
+  # Jira-specific variables.
   #
-  # HEYTACO_ANYWHERE_ATLASSIAN_CLIENT_ID:
-  # HEYTACO_ANYWHERE_ATLASSIAN_CLIENT_SECRET
+  # HEYTACO_ANYWHERE_JIRA_CLIENT_ID:
+  # HEYTACO_ANYWHERE_JIRA_CLIENT_SECRET
 
 # If you'd like to provide your own Kubernetes Secret object instead of passing your values
 # in un-encrypted, pass in the name of a created + populated Secret in the same Namespace
