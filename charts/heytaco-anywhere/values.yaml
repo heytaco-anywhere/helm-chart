@@ -89,6 +89,11 @@ env:
   # HEYTACO_ANYWHERE_JIRA_CLIENT_ID:
   # HEYTACO_ANYWHERE_JIRA_CLIENT_SECRET
 
+  # Confluence-specific variables.
+  #
+  # HEYTACO_ANYWHERE_CONFLUENCE_CLIENT_ID:
+  # HEYTACO_ANYWHERE_CONFLUENCE_CLIENT_SECRET
+
 # If you'd like to provide your own Kubernetes Secret object instead of passing your values
 # in un-encrypted, pass in the name of a created + populated Secret in the same Namespace
 # as the server.
