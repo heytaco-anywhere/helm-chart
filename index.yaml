@@ -3,6 +3,15 @@ entries:
   heytaco-anywhere:
   - apiVersion: v1
     appVersion: 0.2.0
+    created: "2021-06-03T12:46:03.043818418Z"
+    description: A Helm chart for Heytaco Anywhere
+    digest: 6522a0d9666411441433fc956053f11ecea9d4970b67f2c4d19d62f8198d809e
+    name: heytaco-anywhere
+    urls:
+    - https://heytaco-anywhere.github.io/helm-chart/heytaco-anywhere-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: 0.2.0
     created: "2021-05-24T14:28:02.553548579Z"
     description: A Helm chart for Heytaco Anywhere
     digest: fa6ee95004713a922271abf5f8cd0410ec07644348d848d0e1f59e1b987b148f
@@ -55,4 +64,4 @@ entries:
     urls:
     - https://heytaco-anywhere.github.io/helm-chart/heytaco-anywhere-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-24T14:28:02.551473096Z"
+generated: "2021-06-03T12:46:03.042921973Z"
